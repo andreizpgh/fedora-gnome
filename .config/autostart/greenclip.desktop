@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Greenclip
+Exec=greenclip daemon
+Type=Application
