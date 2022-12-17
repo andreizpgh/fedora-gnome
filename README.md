@@ -66,7 +66,11 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 `PlugUpdate`
 
-### 6. Remove Rounded Corners
+### 6. Firefox
+
+Log in into Firefox and import 'Scroll Anywhere', 'Vimium' and 'Simple Translate' configs
+
+### 7. Remove Rounded Corners
 
 ```
 echo '/* UNITE windowDecorations */
@@ -77,7 +81,7 @@ border-radius: 0px;
 }' >> ~/.config/gtk-3.0/gtk.css
 ```
 
-### 7. Gnome settings
+### 8. Gnome settings
 
 ### **Settings:**
 
