@@ -34,7 +34,7 @@ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
 - **Other Stuff**
 
 ```
-sudo dnf install nautilus celluloid flameshot rofi zathura zathura-pdf-mupdf anki libreoffice-writer zsh zsh-syntax-highlighting zsh-autosuggestions neovim vifm xclip fzf unzip wget git gh stow xmodmap gnome-tweaks gnome-extensions-app gnome-browser-connector xprop gnome-software
+sudo dnf install nautilus celluloid flameshot rofi shotwell zathura zathura-pdf-mupdf anki libreoffice-writer zsh zsh-syntax-highlighting zsh-autosuggestions neovim vifm xclip fzf unzip wget git gh stow xmodmap gnome-tweaks gnome-extensions-app gnome-browser-connector xprop gnome-software
 ```
 
 - **Flatpak**
