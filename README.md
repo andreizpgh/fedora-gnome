@@ -91,6 +91,8 @@ Bluetooth – off
 
 Multitasking – Workspaces – Fixed number of workspaces (4)
 
+Mouse & Touchpad – Mouse/Touchpad – Natural Scrolling – off
+
 Mouse & Touchpad – Touchpad – Tap to Click
 
 Keyboard – Input Sources – English, Russian

@@ -20,6 +20,18 @@ nmap <Space>h :back
 exmap forward obcommand app:go-forward
 nmap <Space>l :forward
 
+exmap nextTab obcommand workspace:next-tab
+nmap tj :nextTab
+
+exmap prevTab obcommand workspace:previous-tab
+nmap tk :prevTab
+
+exmap closeTab obcommand workspace:close
+map tc :closeTab
+
+exmap followLink obcommand editor:follow-link
+nmap <CR> :followLink
+
 exmap search obcommand switcher:open
 nmap <Space>o :search
 
@@ -27,7 +39,4 @@ exmap search_word obcommand editor:open-search
 nmap <Space>s :search_word
 
 "editor:open-search-replace
-"workspace:split-vertical
-"editor:open-link-in-new-split
-"workspace:close
 "workspace:close-others
