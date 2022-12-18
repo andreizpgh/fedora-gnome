@@ -43,6 +43,8 @@ https://flathub.org/apps/details/md.obsidian.Obsidian
 
 https://flathub.org/apps/details/com.ticktick.TickTick
 
+https://flathub.org/apps/details/com.github.finefindus.eyedropper
+
 - **Greenclip**
 
 `wget https://github.com/erebe/greenclip/releases/download/v4.2/greenclip`
