@@ -70,7 +70,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 ### 6. Firefox
 
-Log in into Firefox and import 'Scroll Anywhere', 'Vimium' and 'Simple Translate' configs
+Log in into Firefox and import 'Scroll Anywhere', 'Vimium', and 'Simple Translate' configs
 
 ### 7. Remove Rounded Corners
 
