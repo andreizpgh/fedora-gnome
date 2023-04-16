@@ -23,10 +23,11 @@
 
  " NERDTree
  let g:NERDTreeShowHidden = 1
+ let g:NERDTreeQuitOnOpen = 1
  nnoremap <silent> <space>n :NERDTreeToggle<CR>
 
  " Telescope
- nnoremap <Space>t :Telescope find_files<CR>
+ nnoremap <silent><Space>t :Telescope find_files<CR>
 
  " Coc Completion
  " Make <CR> to accept selected completion item or notify coc.nvim to format
@@ -84,11 +85,15 @@
  
  " Working with multiple windows
  nnoremap <Leader>w <C-w>w
- nnoremap <Leader>q <C-w>q
+ nnoremap <Leader>c <C-w>q
  nnoremap <Leader>h <C-w>h
  nnoremap <Leader>j <C-w>j
  nnoremap <Leader>k <C-w>k
  nnoremap <Leader>l <C-w>l
+ nnoremap <C-k> :vertical resize +5<CR>
+ nnoremap <C-j> :vertical resize -5<CR>
+ nnoremap <Leader>s <C-w><C-r>
+ nnoremap <Leader>b <C-^>
  
  " Getting russian keyboard layout to work
  :set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
@@ -113,6 +118,12 @@
 
  " Block View
  nnoremap v <C-v>
+
+ " Sessions
+ nnoremap <Leader>q :wqa<CR>
+
+ " Nowrap
+ set nowrap
 
  " Neovide
  if exists("g:neovide")
