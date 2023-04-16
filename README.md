@@ -35,8 +35,14 @@ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
 - **Other Stuff**
 
 ```
-sudo dnf install nautilus celluloid flameshot rofi shotwell zathura zathura-pdf-mupdf anki libreoffice-writer zsh zsh-syntax-highlighting zsh-autosuggestions neovim vifm xclip fzf unzip wget git gh stow xmodmap gnome-tweaks gnome-extensions-app gnome-browser-connector xprop gnome-software ripgrep
+sudo dnf install nautilus celluloid flameshot rofi shotwell zathura zathura-pdf-mupdf anki libreoffice-writer zsh zsh-syntax-highlighting zsh-autosuggestions neovim vifm xclip fzf unzip wget git gh stow xmodmap gnome-tweaks gnome-extensions-app gnome-browser-connector xprop gnome-software ripgrep nodejs touchegg
 ```
+
+- **Gestures Support**
+
+`sudo systemctl start touchegg`
+
+`sudo systemctl enable touchegg`
 
 - **Intel WiFi Firmware (if needed)**
 `sudo dnf install iwlax2xx-firmware`
@@ -91,7 +97,8 @@ sudo touch /usr/share/applications/Neovide.desktop && sh -c "echo '[Desktop Entr
 Type=Application
 Terminal=false
 Exec=/usr/bin/neovide --maximized
-Name=Neovide' >> /usr/share/applications/Neovide.desktop"
+Name=Neovide
+Icon=/home/andrei/Pictures/neovide.png' >> /usr/share/applications/Neovide.desktop"
 ```
 
 ### 7. Firefox
@@ -214,6 +221,8 @@ Windows – Center New Windows
 ### **Gnome Extensions:**
 
 **EasyScreenCast**
+
+**X11 Gestures**
 
 **Unite:**
 

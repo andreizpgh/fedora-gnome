@@ -3,24 +3,48 @@
  
  " Plugins
  call plug#begin()
- Plug 'junegunn/goyo.vim'
- Plug 'junegunn/limelight.vim'
  Plug 'itchyny/lightline.vim'
  Plug 'dracula/vim'
  Plug 'easymotion/vim-easymotion'
  Plug 'lambdalisue/suda.vim'
- " Search
- Plug 'jremmen/vim-ripgrep'
- " Programming
+ Plug 'joshdick/onedark.vim'
+ " Telescope
  Plug 'nvim-lua/plenary.nvim'
  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
- 
- Plug 'neovim/nvim-lspconfig'
- Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
- 
+ " File Explirer
+ Plug 'scrooloose/nerdtree'
+ Plug 'ryanoasis/vim-devicons'
+ " Syntax
+ Plug 'neoclide/coc.nvim', {'branch': 'release'}
+ let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+ " Colors
+ Plug 'ap/vim-css-color'
  call plug#end()
- 
- " Changing <leader> key
+
+ " NERDTree
+ let g:NERDTreeShowHidden = 1
+ nnoremap <silent> <space>n :NERDTreeToggle<CR>
+
+ " Telescope
+ nnoremap <Space>t :Telescope find_files<CR>
+
+ " Coc Completion
+ " Make <CR> to accept selected completion item or notify coc.nvim to format
+ " <C-g>u breaks current undo, please make your own choice
+ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+ function! CheckBackspace() abort
+   let col = col('.') - 1
+   return !col || getline('.')[col - 1]  =~# '\s'
+ endfunction
+
+ " Formatting
+ command! -nargs=0 Format :call CocActionAsync('format')
+ nnoremap <silent><Space>r :Format<CR>
+ autocmd BufWritePre * silent Format
+
+ " Changing <Leader> key
  let mapleader = " "
  
  " Center cursor
@@ -39,8 +63,8 @@
  
  " Easymotion configuration
  let g:EasyMotion_off_screen_search = 0
- map <leader>f <Plug>(easymotion-bd-w)
- map <leader>а <Plug>(easymotion-bd-w)
+ map <Leader>f <Plug>(easymotion-bd-w)
+ map <Leader>а <Plug>(easymotion-bd-w)
  
  " Define lightline configuration
  let g:lightline = {
@@ -52,21 +76,6 @@
  
  set noshowmode " remove '--insert--' from below the statusline
  
- " Configuring Goyo and Limelight plugins
- autocmd! User GoyoEnter Limelight
- autocmd! User GoyoLeave Limelight!
- 
- " map <A-l> :Limelight!!0.8 <CR>
- " map <A-g> :Goyo <CR>
- nnoremap <leader>g :Goyo <CR>
- nnoremap <leader>п :Goyo <CR>
- 
- let g:limelight_conceal_ctermfg = 'gray'
- let g:limelight_conceal_ctermfg = 240
- 
- " Search in a directory
- nnoremap <leader>t :Rg 
- 
  " Clear search highlighting
  nnoremap <CR> :noh<CR>
  
@@ -76,6 +85,10 @@
  " Working with multiple windows
  nnoremap <Leader>w <C-w>w
  nnoremap <Leader>q <C-w>q
+ nnoremap <Leader>h <C-w>h
+ nnoremap <Leader>j <C-w>j
+ nnoremap <Leader>k <C-w>k
+ nnoremap <Leader>l <C-w>l
  
  " Getting russian keyboard layout to work
  :set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
@@ -83,3 +96,25 @@
  " Fixing alacritty bug
  " autocmd VimEnter * :sleep 20m
  autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
+
+ " Intergrated Terminal
+ " open new split panes to right and below
+ set splitbelow
+ " turn terminal to normal mode with escape
+ tnoremap <Esc> <C-\><C-n>
+ " start terminal in insert mode
+ "au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+ " open terminal on ctrl+n
+ function! OpenTerminal()
+   split term://zsh
+   resize 10
+ endfunction
+ nnoremap <c-n> :call OpenTerminal()<CR>
+
+ " Block View
+ nnoremap v <C-v>
+
+ " Neovide
+ if exists("g:neovide")
+	 colorscheme onedark
+ endif
