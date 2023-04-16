@@ -5,6 +5,7 @@
 
 - Create a partition automatically (custom, done)
 - Fedora Everything – Minimal Install
+- Enable Root Account
 - User Creation (Make this user administrator, Require a password to use this account)
 
 ### 2. Desktop Environment
@@ -34,8 +35,11 @@ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
 - **Other Stuff**
 
 ```
-sudo dnf install nautilus celluloid flameshot rofi shotwell zathura zathura-pdf-mupdf anki libreoffice-writer zsh zsh-syntax-highlighting zsh-autosuggestions neovim vifm xclip fzf unzip wget git gh stow xmodmap gnome-tweaks gnome-extensions-app gnome-browser-connector xprop gnome-software
+sudo dnf install nautilus celluloid flameshot rofi shotwell zathura zathura-pdf-mupdf anki libreoffice-writer zsh zsh-syntax-highlighting zsh-autosuggestions neovim vifm xclip fzf unzip wget git gh stow xmodmap gnome-tweaks gnome-extensions-app gnome-browser-connector xprop gnome-software ripgrep
 ```
+
+- **Intel WiFi Firmware (if needed)**
+`sudo dnf install iwlax2xx-firmware`
 
 - **Flatpak**
 
@@ -53,11 +57,11 @@ https://flathub.org/apps/details/com.github.finefindus.eyedropper
 
 ### 4. Place all the files
 
-`rm ~/.config/vifm/vifmrc`
+`git clone git@github.com:andreizpgh/fedora-gnome.git`
 
 `cd ~/fedora-gnome && stow .`
 
-`mkdir .cache/zsh && touch .cache/zsh/history .cache/greenclip.history`
+`mkdir ~/.cache/zsh && touch ~/.cache/zsh/history ~/.cache/greenclip.history`
 
 ### 5. Neovim
 
@@ -68,11 +72,33 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 `PlugUpdate`
 
-### 6. Firefox
+### 6. Neovide
 
-Log in into Firefox and import 'Scroll Anywhere', 'Vimium', and 'Simple Translate' configs
+- Install neovide from https://neovide.dev/ 
 
-### 7. Remove Rounded Corners
+- Open neovide.tar.gz file
+
+- Move it to /bin
+
+`sudo mv ~/Downloads/neovide /usr/bin`
+
+`rm ~/Downloads/neovide.tar.gz`
+
+- Create .desktop file
+
+```
+sudo touch /usr/share/applications/Neovide.desktop && sh -c "echo '[Desktop Entry]
+Type=Application
+Terminal=false
+Exec=/usr/bin/neovide --maximized
+Name=Neovide' >> /usr/share/applications/Neovide.desktop"
+```
+
+### 7. Firefox
+
+Log in into Firefox and import 'Scroll Anywhere', 'Vimium', and 'Simple Translate' configs (if needed)
+
+### 8. Remove Rounded Corners
 
 ```
 echo '/* UNITE windowDecorations */
@@ -83,7 +109,7 @@ border-radius: 0px;
 }' >> ~/.config/gtk-3.0/gtk.css
 ```
 
-### 8. Gnome settings
+### 9. Gnome settings
 
 ### **Settings:**
 
@@ -179,13 +205,15 @@ Menu –> endash
 
 ### **Gnome Tweaks:**
 
-Keyboard & Mouse – Caps Lock behaviour – Swap Esc and Caps Lock
+Keyboard & Mouse – Additional Layout Options – Caps Lock behaviour – Swap Esc and Caps Lock
 
 Keyboard & Mouse – Switching to another layout – Right Alt
 
 Windows – Center New Windows
 
 ### **Gnome Extensions:**
+
+**EasyScreenCast**
 
 **Unite:**
 

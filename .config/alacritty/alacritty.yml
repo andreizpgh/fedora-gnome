@@ -34,7 +34,7 @@ font:
     family: RobotoMono
     style: Medium 
 # Point size
-  size: 9
+  size: 11
 
 key_bindings:
   # (Windows, Linux, and BSD only)
