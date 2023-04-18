@@ -128,5 +128,7 @@ set nowrap
 
 " Neovide
 if exists("g:neovide")
+	map! <c-v> <C-R>+
+	cnoremap <c-v> <c-r>+
 	colorscheme onedark
 endif
