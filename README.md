@@ -1,6 +1,5 @@
 # FEDORA AND GNOME DE SET-UP PROCESS
 
-
 ### 1. Fedora Minimal Install
 
 - Create a partition automatically (custom, done)
@@ -23,7 +22,7 @@ Xorg login
 ### 3. Software Installation
 
 - **Telegram**
- 
+
 `sudo dnf upgrade --refresh -y`
 
 ```
@@ -38,6 +37,10 @@ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
 sudo dnf install nautilus celluloid flameshot rofi shotwell zathura zathura-pdf-mupdf anki libreoffice-writer zsh zsh-syntax-highlighting zsh-autosuggestions neovim vifm xclip fzf unzip wget git gh stow xmodmap gnome-tweaks gnome-extensions-app gnome-browser-connector xprop gnome-software ripgrep nodejs touchegg
 ```
 
+- **Formatting in Neovim**
+
+`npm install -g prettier`
+
 - **Gestures Support**
 
 `sudo systemctl start touchegg`
@@ -45,7 +48,7 @@ sudo dnf install nautilus celluloid flameshot rofi shotwell zathura zathura-pdf-
 `sudo systemctl enable touchegg`
 
 - **Intel WiFi Firmware (if needed)**
-`sudo dnf install iwlax2xx-firmware`
+  `sudo dnf install iwlax2xx-firmware`
 
 - **Flatpak**
 
@@ -80,7 +83,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 ### 6. Neovide
 
-- Install neovide from https://neovide.dev/ 
+- Install neovide from https://neovide.dev/
 
 - Open neovide.tar.gz file
 
@@ -156,7 +159,7 @@ Navigation:
 
 - Switch windows directly – Alt+Tab
 
-Windows: 
+Windows:
 
 - Close window – Alt+Q
 
@@ -192,7 +195,7 @@ Vifm (Alt+V)
 
 `alacritty -e vifm /home/andrei`
 
-*OR*
+_OR_
 
 Export:
 
