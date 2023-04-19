@@ -225,8 +225,6 @@ Windows – Center New Windows
 
 **EasyScreenCast**
 
-**X11 Gestures**
-
 **Unite:**
 
 - General (All disabled, Always, Always, Never, Never, Right)
