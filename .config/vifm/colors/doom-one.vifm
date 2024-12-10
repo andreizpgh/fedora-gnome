@@ -33,7 +33,7 @@ highlight Selected        cterm=bold ctermfg=magenta    ctermbg=default
 highlight CurrLine        cterm=bold ctermfg=236    ctermbg=blue
 
 highlight WildMenu        cterm=none,reverse ctermfg=blue ctermbg=236
-highlight CmdLine         cterm=none ctermfg=255 ctermbg=default
+highlight CmdLine         cterm=none ctermfg=white ctermbg=default
 highlight ErrorMsg        cterm=none ctermfg=red ctermbg=black
 
 highlight Directory       cterm=none ctermfg=blue ctermbg=default

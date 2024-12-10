@@ -1,0 +1,33 @@
+import = ["/home/andrei/.config/alacritty/doom-one.toml"]
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 11
+
+[font.normal]
+family = "RobotoMono"
+style = "Medium"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control"
+
+[scrolling]
+history = 10000
+multiplier = 1
+
+[window]
+dynamic_padding = true
+dynamic_title = true
+
+[window.padding]
+x = 6
+y = 2

@@ -5,7 +5,7 @@
 " If you would like to use another vi clone such as Elvis or Vile
 " you will need to change this setting.
 
-set vicmd=nvim
+set vicmd=~/.cargo/bin/neovide
 
 " This makes vifm perform file operations on its own instead of relying on
 " standard utilities like `cp`.  While using `cp` and alike is a more universal
@@ -447,7 +447,7 @@ nnoremap yf :!echo -n %c:p | xsel --input --primary %i &&
 \ echo -n %c:p | xsel --clipboard --input %i<cr>
 endif
 
-" Mappings 
+" Re-mappings 
 nnoremap сц cw
 
 nnoremap I cw<c-a>
@@ -471,14 +471,25 @@ nnoremap л k
 nnoremap р h
 nnoremap д l
 
-nnoremap J 5j
-nnoremap О 5j
-
 nnoremap K 5k
 nnoremap Л 5k
 
 nnoremap ящ zo
 nnoremap яь zm
+
+" Custom Mapping
+nnoremap T :tree! depth=3<cr>
+nnoremap V :vsplit!<cr> 
+
+nnoremap ,m : let $DIR_NAME = input('mkdir: ', '', 'dir')
+\| if $DIR_NAME != ''
+\| execute 'mkdir' fnameescape($DIR_NAME)
+\| endif<cr>
+
+nnoremap ,f : let $FILE_NAME = input('touch: ', '', 'file')
+\| if $FILE_NAME != ''
+\| execute 'touch' fnameescape($FILE_NAME)
+\| endif<cr>
 
 " Copy path / file name
 " yank current file path into the clipboard
@@ -497,9 +508,12 @@ nnoremap аь :media<cr>
 " Don't confirm deletion
 set confirm-=delete
 
-" Open console in current directory
+" Open console in the current directory
 nnoremap ,t :!alacritty -e zsh &<cr>
 nnoremap бе :!alacritty -e zsh &<cr>
+
+" Open neovide in the current directory
+nnoremap ,n :!~/.cargo/bin/neovide &<cr>
 
 " Open editor to edit vifmrc and apply settings after returning to vifm
 nnoremap ,c :write | edit $MYVIFMRC | restart full<cr>
