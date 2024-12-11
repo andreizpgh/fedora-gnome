@@ -1,9 +1,17 @@
 # ZSH CONFIGURATION FILE                           
 
+# Load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats '%b '
+setopt PROMPT_SUBST
 
-# Enable colors and change prompt
+# Enable colors
 autoload -U colors && colors
+
+# Configure prompt
 PROMPT='%B%F{blue}%1~%f%b >> '
+RPROMPT='%F{red}${vcs_info_msg_0_}%f'
 
 # History in cache directory
 HISTSIZE=1000
@@ -24,6 +32,7 @@ export KEYTIMEOUT=1
 # Aliases
 alias v="nvim"
 alias pdf="libreoffice --headless --convert-to pdf"
+alias gc="git checkout"
 
 # Delete button action
 bindkey "^[[3~" delete-char
